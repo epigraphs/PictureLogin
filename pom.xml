@@ -7,7 +7,7 @@
 
     <groupId>me.Lythrilla</groupId>
     <artifactId>PictureLogin</artifactId>
-    <version>R2-1.0.2</version>
+    <version>R2-1.0.3</version>
     <packaging>jar</packaging>
 
     <name>PictureLogin</name>
@@ -17,7 +17,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
-        <adventure.version>4.17.0</adventure.version>
+        <adventure.version>4.20.0</adventure.version>
         <adventure.platform.version>4.3.4</adventure.platform.version>
     </properties>
 
