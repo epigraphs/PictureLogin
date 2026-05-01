@@ -204,15 +204,20 @@ public class ImageMessage {
                 String avatarPart = parts[0];
                 TextComponent avatarComponent = LEGACY_SERIALIZER.deserialize(ChatColor.translateAlternateColorCodes((char)'&', (String)avatarPart));
                 if (parts.length > 1) {
-                    Object textComponent;
+                    Component textComponent;
                     String textPart = parts[1];
-                    if (this.isMiniMessageFormat(textPart)) {
-                        textComponent = MINI_MESSAGE.deserialize(textPart);
-                    } else {
-                        String miniMessageText = this.legacyToMiniMessage(ChatColor.translateAlternateColorCodes((char)'&', (String)textPart));
+                    // Convert any legacy & / &# codes to MiniMessage tags;
+                    // existing <tags> are left alone, so this is a no-op for
+                    // pure MiniMessage input. Then always deserialize as
+                    // MiniMessage so all configured tag styles render.
+                    String miniMessageText = this.legacyToMiniMessage(textPart);
+                    try {
                         textComponent = MINI_MESSAGE.deserialize(miniMessageText);
+                    } catch (Exception ex) {
+                        textComponent = LEGACY_SERIALIZER.deserialize(
+                                ChatColor.translateAlternateColorCodes('&', textPart));
                     }
-                    finalComponent = ((TextComponent)((TextComponent)Component.empty().append(avatarComponent)).append(Component.space())).append((Component)textComponent);
+                    finalComponent = Component.empty().append(avatarComponent).append(Component.space()).append(textComponent);
                 } else {
                     finalComponent = avatarComponent;
                 }
@@ -229,10 +234,6 @@ public class ImageMessage {
         for (String line : this.lines) {
             player.spigot().sendMessage(MineDown.parse(line, new String[0]));
         }
-    }
-
-    private boolean isMiniMessageFormat(String text) {
-        return text.contains("<") && text.contains(">") && (text.contains("<gray>") || text.contains("<yellow>") || text.contains("<green>") || text.contains("<rainbow>") || text.contains("<gradient") || text.contains("<#"));
     }
 
     public String[] getLines() {

@@ -7,7 +7,7 @@
 
     <groupId>me.Lythrilla</groupId>
     <artifactId>PictureLogin</artifactId>
-    <version>R2-1.0.3</version>
+    <version>R2-1.0.4</version>
     <packaging>jar</packaging>
 
     <name>PictureLogin</name>
