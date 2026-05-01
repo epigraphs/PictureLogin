@@ -88,7 +88,13 @@ public class ImageMessage {
                 return this;
             }
             int len = 65 - this.lines[y].length();
-            this.lines[y] = this.lines[y] + this.center(text[y], len);
+            if (len <= 0) {
+                // No padding possible — keep a single space separator so
+                // sendToPlayer's avatar/text split still works.
+                this.lines[y] = this.lines[y] + " " + text[y];
+            } else {
+                this.lines[y] = this.lines[y] + this.center(text[y], len);
+            }
         }
         return this;
     }
