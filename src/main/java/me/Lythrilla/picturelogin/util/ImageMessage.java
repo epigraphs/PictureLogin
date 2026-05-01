@@ -94,6 +94,9 @@ public class ImageMessage {
     }
 
     private String center(String s, int length) {
+        if (length <= 0) {
+            return s;
+        }
         if (s.length() > length) {
             return s.substring(0, length);
         }
