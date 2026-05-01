@@ -1,0 +1,42 @@
+name: PictureLogin
+version: 'R2-1.0.1'
+main: me.Lythrilla.picturelogin.PictureLogin
+authors: [Lythrilla, NathanG]
+api-version: '1.21'
+softdepend: [PlaceholderAPI, AuthMe, SkinsRestorer, PremiumVanish]
+
+commands:
+  picturelogin:
+    description: PictureLogin main command
+    usage: /picturelogin <reload|version|language|help|debug>
+    aliases: [piclogin, plogin, pl]
+    permission: picturelogin.use
+
+permissions:
+  picturelogin.use:
+    description: Allow use of PictureLogin commands
+    default: true
+  picturelogin.show:
+    description: Allow players to see the login picture message
+    default: true
+  picturelogin.reload:
+    description: Allow reloading the plugin configuration
+    default: op
+  picturelogin.language:
+    description: Allow changing the plugin language
+    default: op
+  picturelogin.debug:
+    description: Allow using the debug command
+    default: op
+  picturelogin.group.vip:
+    description: Custom message permission for VIP players
+    default: false
+  picturelogin.group.admin:
+    description: Custom message permission for administrators
+    default: op
+  picturelogin.effect.rainbow:
+    description: Permission for rainbow text effect
+    default: false
+  picturelogin.effect.gradient:
+    description: Permission for gradient text effect
+    default: false
