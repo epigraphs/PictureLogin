@@ -1,0 +1,263 @@
+#################################################################
+#  _____ _      _                    _                 _        #
+# |  __ (_)    | |                  | |               (_)       #
+# | |__) |  ___| |_ _   _ _ __ ___  | |     ___   __ _ _ _ __   #
+# |  ___/ |/ __| __| | | | '__/ _ \ | |    / _ \ / _` | | '_ \  #
+# | |   | | (__| |_| |_| | | |  __/ | |___| (_) | (_| | | | | | #
+# |_|   |_|\___|\__|\__,_|_|  \___| |______\___/ \__, |_|_| |_| #
+#                                                 __/ |         #
+#                                                |___/          #
+#################################################################
+
+#############
+# Language Settings
+########
+# Available languages: en_US, zh_CN
+# Language files are in the plugin's lang folder
+# You can also create your own language file
+
+language: "en_us"
+
+#############
+# Message Settings
+########
+# Each line represents a message, empty for blank lines
+# (If image height is 8, you can set up to 8 lines of messages)
+# Supports chat color codes (&) and MiniMessage format (<bold>, <gradient>, etc.)
+########
+# Available variables:
+# %pname%       - Player name (without formatting)
+# %online%      - Online player count
+# %max%         - Maximum player count
+# %motd%        - Server MOTD
+# %displayname% - Player display name
+########
+# Note: If PlaceholderAPI plugin is installed
+#       You can also use all variables it provides
+########
+# MiniMessage examples:
+# - '<rainbow>Welcome to my server</rainbow>'
+# - '<gradient:red:blue>This is gradient text</gradient>'
+# - '<yellow>Yellow text <bold>Bold text</bold></yellow>'
+
+messages:
+    - ''
+    - '<gray>Welcome to <yellow><bold>My Server</bold></yellow><gray>!'
+    - '<rainbow>★ VIP Player Special Effect ★</rainbow>'
+    - '<gray>» Online: [<yellow>%online%</yellow><gray>/<yellow>%max%</yellow><gray>] players'
+    - '<gray>» <green>Latest announcement: </green><gray>New features added!'
+    - ''
+    - '<gradient:green:blue>» PictureLogin plugin by Lythrilla&NathanG</gradient>'
+    - ''
+
+#############
+# First Join Messages
+########
+# Set to true to display different messages
+# when a player joins for the first time
+# Same variables as above can be used
+
+show-first-join: true
+
+first-join-messages:
+    - ''
+    - '<gray>Welcome to <yellow><bold>My Server</bold></yellow><gray>!'
+    - ''
+    - '<gray>» Online: [<yellow>%online%</yellow><gray>/<yellow>%max%</yellow><gray>] players'
+    - '<gray>» <green>Latest announcement: </green><gray>New features added!'
+    - ''
+    - '<gray>Everyone please welcome <green>%pname% </green><gray>to the server!'
+    - ''
+
+#############
+# Leave Messages
+########
+# Set to true to display messages
+# when a player leaves the server
+# Same variables as above can be used
+
+show-leave-message: false
+
+leave-messages:
+    - ''
+    - '<yellow>%pname% </yellow><gray>has left the server!'
+    - ''
+    - '<gray>» Online: [<yellow>%online%</yellow><gray>/<yellow>%max%</yellow><gray>] players'
+    - '<gray>» <green>Latest announcement: </green><gray>New features added!'
+    - ''
+    - '<gray>» <green>PictureLogin </green><gray>plugin by <green>Lythrilla&NathanG</green><gray>'
+    - ''
+
+#############
+# Fallback Image
+########
+# If enabled, the plugin will use a fallback image
+# when it cannot load the player's avatar
+# Fallback image location:
+# > plugins/PictureLogin/fallback.png
+
+fallback: true
+
+#############
+# Clear Chat
+########
+# Set to true to clear chat history
+# before sending messages
+# Options: [true|false]
+
+clear-chat: false
+
+#############
+# Center Text
+########
+# Whether to center the text displayed
+# next to the image
+# Options: [true|false]
+
+center-text: false
+
+#############
+# Block Default Join/Leave Messages
+########
+# Set to true to block
+# default join and leave messages
+
+block-join-message: false
+block-leave-message: false
+
+#############
+# Login Sound
+########
+# Set to true to play a sound
+# when a player logs in
+
+play-login-sound: true
+
+# Login sound settings
+login-sound:
+  # Sound name (Minecraft vanilla sound name)
+  # Full list: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+  sound: "ENTITY_PLAYER_LEVELUP"
+  # Volume (0.0 - 1.0)
+  volume: 1.0
+  # Pitch (0.5 - 2.0)
+  pitch: 1.0
+
+#############
+# Player Only
+########
+# Set to true to send login messages
+# only to the player who joined
+
+player-only: true
+
+#############
+# Image Character
+######## 
+# Change this to modify the character that makes up the image
+########
+# Options:
+# - BLOCK (full block)
+# - DARK_SHADE (dark shade)
+# - MEDIUM_SHADE (medium shade)
+# - LIGHT_SHADE (light shade)
+
+character: 'BLOCK'
+
+#############
+# Image URL
+######## 
+# URL for fetching player avatars
+# Default uses minepic
+# The plugin will automatically handle the URL based on server mode:
+# - Online mode: Uses player UUID
+# - Offline mode: Automatically uses player name
+########
+# Available variables:
+# %uuid%   - Player UUID
+# %pname%  - Player username
+
+url: 'https://minepic.org/avatar/8/%uuid%'
+
+# Note: If your server is in offline mode but URL only has %uuid% variable,
+# the plugin will automatically replace %uuid% with the player's name
+
+# If you use SkinsRestorer plugin and the player has a custom skin,
+# the plugin will automatically use that skin's data to get the avatar
+
+#############
+# Async Processing
+########
+# Set to true to generate images on async thread
+# This will reduce performance impact but may delay message display
+
+async: true
+
+#############
+# Permission Requirement
+########
+# Set to false to show messages to all joining players
+# regardless of whether they have the
+# picturelogin.show permission
+
+require-permission: true
+
+#############
+# Plugin Hooks
+########
+# Set to false to prevent PictureLogin
+# from integrating with specific plugins
+
+hooks:
+  PlaceholderAPI: true
+  AuthMe: true
+  SkinsRestorer: true
+
+#############
+# Update Check
+########
+# If enabled, the plugin will check for updates
+# when the server starts and send a message
+# in the console (if an update is found)
+
+update-check: true
+
+#############
+# Statistics
+########
+# Allow this plugin to send anonymous statistics to bStats?
+# https://bstats.org/
+# Set to false to disable
+
+metrics: true
+
+#############
+# Custom Message System
+########
+# The following settings allow you to set custom messages for specific players or permission groups
+# When enabled, the plugin will check configurations in users.yml and perms.yml
+
+# Enable player-based custom messages (users.yml)
+enable-user-messages: true
+
+# Enable permission-based custom messages (perms.yml)
+enable-permission-messages: true
+
+#############
+# Command Settings
+########
+# The following settings allow you to enable or disable
+# specific command functionalities
+
+settings:
+  enable_commands:
+    reload: true
+    language:
+      language: true
+      set: true
+    debug: true
+
+# Message priority order (high to low):
+# 1. Player-specific messages (users.yml)
+# 2. Permission group messages (perms.yml, sorted by priority)
+# 3. Default messages (this config file)

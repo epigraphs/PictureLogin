@@ -1,0 +1,131 @@
+#####
+# PictureLogin 
+# 简体中文语言文件
+
+# 可使用 %prefix% 作为前缀
+# 使用 %new_line% 插入新行
+# 前缀选项 (取消注释您想使用的前缀):
+prefix: "&a&l头像登录 &8» &r"
+# prefix: "&8&l| &b&l画像登录 &8&l|&r "
+# prefix: "&3&l✦ &b画像登录 &r"
+# prefix: "&b&l➤ &r"
+# prefix: "&7(&b&l画像&7)&r "
+
+# 📜 命令消息
+reload_config: "%prefix% &a配置已成功重新加载"
+reload_config_help: "%prefix% &e/picturelogin reload &7- 重新加载配置文件"
+version_command_help: "%prefix% &e/picturelogin version &7- 查看插件版本信息"
+language_command_help: "%prefix% &e/picturelogin language <语言代码> &7- 更改插件语言"
+help_command_help: "%prefix% &e/picturelogin help &7- 显示命令帮助"
+debug_command_help: "%prefix% &e/picturelogin debug <类型> [玩家|权限组] &7- 测试消息"
+no_permission: "%prefix% &c您没有权限执行这个命令！"
+version_info: "%prefix% 当前运行版本 &e%version%"
+language_changed: "%prefix% &a语言已更改为 &e%language%"
+invalid_language: "%prefix% &c语言 &e%language% &c不可用。&7有效的语言: &e%languages%"
+
+# 🐛 调试命令
+debug_invalid_type: "%prefix% &c无效的消息类型 &e%type%&c。有效类型: &elogin, leave, firstjoin, all"
+debug_message_header: "%prefix% &e%type% &7消息测试: &e%target%"
+debug_message_footer: "%prefix% &7消息测试完成！"
+debug_user_not_found: "%prefix% &c找不到玩家配置: &e%name%"
+debug_group_not_found: "%prefix% &c找不到权限组配置: &e%name%"
+debug_permission_message: "%prefix% &7权限组消息: &e%group%"
+debug_user_message: "%prefix% &7玩家消息: &e%player%"
+debug_global_message: "%prefix% &7全局消息"
+
+# 📚 帮助菜单
+help_header: "&8* &e&lPictureLogin 帮助 &8*"
+help_footer: "&8* &e&l已加载所有命令 &8*"
+
+# 🔮 其他
+update_available: "%prefix% &e发现新版本！当前版本: %current% 新版本: %new%"
+update_available_download: "%prefix% &7下载地址: &ehttps://github.com/Lythrilla/PictureLogin-master"
+
+# 🛡️ 错误消息（控制台输出）
+error_reload_config: "%prefix% &c无法访问配置文件"
+error_retrieving_avatar: "%prefix% &c获取玩家头像时出错，使用备用图像"
+error_fallback_img: "%prefix% &c无法加载备用图像"
+error_update_check: "%prefix% &c无法检查更新"
+error_language_not_found: "%prefix% &c找不到语言文件 %language%，使用默认语言"
+error_avatar_url_null: "%prefix% &c头像URL为空"
+using_fallback_img: "%prefix% &7使用备用图像"
+
+# 🧪 插件相关消息
+plugin_enabled: '&a插件已启用！'
+plugin_disabled: '&c插件已禁用！'
+config_reloaded: '&a配置文件已重新加载！'
+
+# ⚠ 错误消息
+error_loading_config: '&c加载配置文件时出错！'
+error_loading_languages: '&c加载语言文件时出错！'
+
+# 👤 玩家消息
+player_not_found: '%prefix% &c找不到玩家 &e%s'
+command_usage: '%prefix% &7用法: &e%s'
+must_be_player: '%prefix% &c只有玩家可以执行此命令'
+messages_set: '%prefix% &a已为玩家 &e%s &a设置自定义&e%s&a消息'
+messages_cleared: '%prefix% &a已清除玩家 &e%s &a的&e%s&a消息'
+messages_not_found: '%prefix% &c找不到玩家 &e%s &c的消息配置'
+
+# 🔨 命令描述
+command_reload_desc: '重新加载配置文件'
+command_version_desc: '查看插件版本信息'
+command_language_desc: '更改插件语言'
+command_help_desc: '显示帮助信息'
+command_debug_desc: '测试不同类型的消息'
+
+# 📢 消息类型
+message_type_login: '登录'
+message_type_firstjoin: '首次加入'
+message_type_leave: '离开'
+
+# 🌐 语言设置
+current_language: "%prefix% &7当前语言: &e%language%"
+available_languages: "%prefix% &7可用语言: &e%languages%"
+language_usage: "%prefix% &7使用 &e/picturelogin language <code> &7来更改语言"
+language_list_header: "&8* &e&lPictureLogin 语言设置 &8*"
+language_list_footer: "&8* &e&l选择您的首选语言 &8*"
+
+# 📜 日志信息
+log_creating_lang_dir: "正在创建语言目录: %path%"
+log_creating_en_file: "正在创建英文语言文件: %path%"
+log_creating_zh_file: "正在创建中文语言文件: %path%"
+log_languages_loaded: "已加载语言列表: %languages%"
+log_language_not_found: "找不到语言文件: %language%，使用默认语言: %default%"
+log_language_changed: "语言已更改为: %language%"
+log_language_manager_init: "语言管理器已初始化，当前语言: %language%"
+log_players_loaded: "已加载 %count% 个玩家自定义消息配置"
+log_permissions_loaded: "已加载 %count% 个权限组自定义消息配置"
+log_permission_save_error: "无法保存 perms.yml: %error%"
+log_user_save_error: "无法保存 users.yml: %error%"
+log_update_check_disabled: "PictureLogin %version% - 更新检查已禁用"
+log_update_check_enabled: "PictureLogin %version% - 正在检查更新..."
+log_plugin_enabled: "PictureLogin v%version% 已成功启动!"
+log_plugin_disabled: "PictureLogin 已停用!"
+log_plugin_reloaded: "插件配置已重新加载完成!"
+log_url_error: "无法从 config.yml 读取图片 URL！"
+log_papi_registered: "已注册PictureLogin占位符，可使用 %picturelogin_avatar_1% 到 %picturelogin_avatar_8% 显示ASCII头像"
+log_adventure_error: "尝试在插件未初始化或已关闭时访问Adventure API"
+
+# 📋 命令帮助
+command_help_header: "&8=== &6PictureLogin &f命令 &8==="
+command_version_syntax: "&f/picturelogin version"
+command_version_desc: "&7查看插件版本"
+command_reload_syntax: "&f/picturelogin reload"
+command_reload_desc: "&7重载插件配置"
+command_language_syntax: "&f/picturelogin language [语言]"
+command_language_desc: "&7查看或更改插件语言"
+command_debug_syntax: "&f/picturelogin debug <login|leave|firstjoin|all> [global|user|perm] [名称]"
+command_debug_desc: "&7调试消息配置"
+command_disabled: "&c此命令在配置中已禁用。"
+
+# 🔍 调试帮助
+debug_command_help: "&6用法: &f/picturelogin debug <login|leave|firstjoin|all> [global|user|perm] [名称]"
+debug_invalid_type: "&c无效的消息类型。使用: login, leave, firstjoin, 或 all"
+debug_message_header: "&8=== &6PictureLogin &f调试信息 &8==="
+debug_message_footer: "&8=== &6调试信息结束 &8==="
+debug_user_not_found: "&c未找到玩家 &f%player% &c的配置。"
+debug_group_not_found: "&c未找到权限组 &f%group%&c。"
+debug_permission_message: "&7权限组: &f%group% &7| 权限: &f%permission% &7| 优先级: &f%priority%"
+debug_user_message: "&7玩家: &f%player%"
+debug_global_message: "&7全局配置" 
